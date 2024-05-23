@@ -33,17 +33,6 @@ import { getDetailApi, getListPhone } from "./services_customer.js";
         .catch((err)=>{ console.log("err",err)})
       }
       window.themPhone=themPhone;
-      // const tinhtien =(totall,price)=> {
-      // let tienMoi = document.getElementById('soL').value;
-      // let tienCu=document.getElementById('total').value
-      // if (tienMoi<totall){
-      // tienCu=tienCu-((totall-tienMoi)*price);
-      // }else {
-      //   tienCu=tienCu+((tienMoi-totall)*price);
-      // }
-      // document.getElementById('soL').innerHTML=tienCu;
-      // }
-      // window.tinhtien=tinhtien;
     
       const  deletei = (id) => {
         getDetailApi(id)
@@ -60,3 +49,22 @@ if (phoneIndex!== -1) {
         .catch((err)=>{ console.log("err",err)})
       }
       window.deletei=deletei;
+      const findtype = () => {
+        console.log("yess");
+        getListPhone()
+    .then((res) => {
+        console.log('res: ', res);
+        let listPhone = res.data;
+        let typeFind=document.getElementById('find').value;
+        if(typeFind=="ALL"){
+        renderPhoneList(listPhone);
+        }
+        else{let phoneType = listPhone.filter((item)=>item.type == typeFind);
+          renderPhoneList(phoneType);}
+      })
+      .catch((err) => {
+        console.log('err: ', err);
+      });
+        
+        };
+        window.findtype=findtype;

@@ -5,7 +5,40 @@ body {
       .header {
         display: flex;
         justify-content: flex-end;
-        
+        .search {
+          margin-right: 30px;
+          display: flex;
+          align-items: center;
+          
+  
+          span {
+              display: flex;
+              align-items: center;
+  
+              i {
+border-radius: 5px 0px 0px 5px;
+                background-color: #fff;
+                  font-size: 30px; 
+                  color: #333; 
+                 
+              }
+          }
+  
+          select {
+              padding: 5px 10px; 
+               
+              border-radius: 0px 5px 5px 0px; 
+              font-size: 14px;
+              color: #333; 
+              background-color: #fff; 
+  
+              &:focus {
+                  outline: none; 
+                  border-color: #007BFF; 
+                  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+              }
+          }
+      }
         .BACK {
           display: flex;
           justify-content: space-between;

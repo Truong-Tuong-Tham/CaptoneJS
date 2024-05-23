@@ -5,6 +5,33 @@ body header .header {
   display: flex;
   justify-content: flex-end;
 }
+body header .header .search {
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+}
+body header .header .search span {
+  display: flex;
+  align-items: center;
+}
+body header .header .search span i {
+  border-radius: 5px 0px 0px 5px;
+  background-color: #fff;
+  font-size: 30px;
+  color: #333;
+}
+body header .header .search select {
+  padding: 5px 10px;
+  border-radius: 0px 5px 5px 0px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+}
+body header .header .search select:focus {
+  outline: none;
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
 body header .header .BACK {
   display: flex;
   justify-content: space-between;
