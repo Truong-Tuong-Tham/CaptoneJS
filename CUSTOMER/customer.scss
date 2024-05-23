@@ -1,0 +1,223 @@
+body {
+    background-color: wheat;
+
+    header {
+        .header {
+            display: flex;
+            justify-content: flex-end;
+
+            button {
+                position: relative;
+                border: none;
+                padding: 8px 16px;
+                background: transparent;
+                color: #333;
+                cursor: pointer;
+                margin-left: 10px;
+                font-size: 16px;
+
+                a {
+                    color: #333;
+
+                    i {
+                        font-size: 40px;
+                    }
+                }
+
+                span {
+                    position: absolute;
+                    top: 5px;
+                    right: 10px;
+                    width: 15px;
+                    height: 15px;
+                    background-color: white;
+                    border-radius: 50%;
+                    border: 1px solid #333;
+                }
+            }
+        }
+    }
+}
+
+// Định nghĩa biến màu sắc và font chung
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$font-family: Arial, sans-serif;
+
+// Sass cho đoạn mã HTML
+#showPhone.phone {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+
+    .card {
+        width: calc(25% - 20px);
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+        button {
+            width: 200px;
+            margin-bottom: 20px;
+            margin-left: 45px;
+            background-color: $primary-color;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+
+            &:hover {
+                background-color: darken($primary-color, 10%);
+                color: lighten($primary-color, 10%);
+                transform: translateY(-3px);
+            }
+        }
+        .card-img-top {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card-body {
+            padding: 1.25rem;
+            text-align: center;
+
+            .card-title {
+                font-family: $font-family;
+                font-size: 1.25rem;
+                color: $primary-color;
+                margin-bottom: 0.5rem;
+            }
+
+            .card-text {
+                font-family: $font-family;
+                color: $secondary-color;
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            h5 {
+                text-align: center;
+                margin: 0;
+            }
+
+         
+        }
+    }
+}
+// CART
+.side-nav {
+  .close {
+    position: absolute;
+    top: -10px;
+    right: 0px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    .dialog-close-btn {
+      text-decoration: none;
+      font-size: 40px;
+      color: white;
+    }
+  }
+
+  .cart-items {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    height: 50%;
+    top: 10%;
+    flex-direction: column;
+    h2 {
+        text-align: center;
+        color: #fff;
+      
+      }
+    
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #333;
+        thead {
+          tr {
+            background-color: #444;
+            color: #fff;
+    
+            td {
+              padding: 10px;
+              text-align: center;
+              border: 1px solid #555;
+            }
+          }
+        }
+    
+        tbody {
+          tr {
+            &:nth-child(even) {
+              background-color: #3d3d3d;
+            }
+    
+            &:nth-child(odd) {
+              background-color: #2b2b2b;
+            }
+    
+            td {
+              padding: 10px;
+              text-align: left;
+              border: 1px solid #555;
+              color: #fff;
+    
+              &:last-child {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+  }
+
+  position: fixed;
+  background: #010101;
+  height: 100%;
+  width: 60%;
+  flex-direction: column;
+  top: 0;
+  right: -100%;
+  z-index: 10;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+  &:target {
+    right: 0;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .close:target ~ & {
+    right: -100%;
+    visibility: hidden;
+    opacity: 1;
+  }
+  .final {
+    text-align: right; // Canh phải
+    margin-top: 20px; // Khoảng cách trên cùng của tổng tiền
+    font-weight: bold;
+  
+    p {
+    color: #fff;
+      margin: 0; // Bỏ khoảng cách mặc định của p
+    }
+  }
+}

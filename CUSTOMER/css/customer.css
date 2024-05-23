@@ -1,0 +1,182 @@
+body {
+  background-color: wheat;
+}
+body header .header {
+  display: flex;
+  justify-content: flex-end;
+}
+body header .header button {
+  position: relative;
+  border: none;
+  padding: 8px 16px;
+  background: transparent;
+  color: #333;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 16px;
+}
+body header .header button a {
+  color: #333;
+}
+body header .header button a i {
+  font-size: 40px;
+}
+body header .header button span {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #333;
+}
+
+#showPhone.phone {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+#showPhone.phone .card {
+  width: calc(25% - 20px);
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+#showPhone.phone .card:hover {
+  transform: scale(1.05);
+}
+#showPhone.phone .card button {
+  width: 200px;
+  margin-bottom: 20px;
+  margin-left: 45px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+#showPhone.phone .card button:hover {
+  background-color: #0062cc;
+  color: #3395ff;
+  transform: translateY(-3px);
+}
+#showPhone.phone .card .card-img-top {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#showPhone.phone .card .card-body {
+  padding: 1.25rem;
+  text-align: center;
+}
+#showPhone.phone .card .card-body .card-title {
+  font-family: Arial, sans-serif;
+  font-size: 1.25rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+#showPhone.phone .card .card-body .card-text {
+  font-family: Arial, sans-serif;
+  color: #6c757d;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+#showPhone.phone .card .card-body h5 {
+  text-align: center;
+  margin: 0;
+}
+
+.side-nav {
+  position: fixed;
+  background: #010101;
+  height: 100%;
+  width: 60%;
+  flex-direction: column;
+  top: 0;
+  right: -100%;
+  z-index: 10;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.side-nav .close {
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.side-nav .close .dialog-close-btn {
+  text-decoration: none;
+  font-size: 40px;
+  color: white;
+}
+.side-nav .cart-items {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  height: 50%;
+  top: 10%;
+  flex-direction: column;
+}
+.side-nav .cart-items h2 {
+  text-align: center;
+  color: #fff;
+}
+.side-nav .cart-items table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #333;
+}
+.side-nav .cart-items table thead tr {
+  background-color: #444;
+  color: #fff;
+}
+.side-nav .cart-items table thead tr td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #555;
+}
+.side-nav .cart-items table tbody tr:nth-child(even) {
+  background-color: #3d3d3d;
+}
+.side-nav .cart-items table tbody tr:nth-child(odd) {
+  background-color: #2b2b2b;
+}
+.side-nav .cart-items table tbody tr td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #555;
+  color: #fff;
+}
+.side-nav .cart-items table tbody tr td:last-child {
+  text-align: center;
+}
+.side-nav:target {
+  right: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.close:target ~ .side-nav {
+  right: -100%;
+  visibility: hidden;
+  opacity: 1;
+}
+.side-nav .final {
+  text-align: right;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.side-nav .final p {
+  color: #fff;
+  margin: 0;
+}/*# sourceMappingURL=customer.css.map */

@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$color-black-1:#24262b;
+$color-blue-2:#6DC5D1;
+$color-og-1:#e91e63;
+$color-w-1:#FFFAE6;
+$color-black-2:#31363F;
+$color-black-3:#31363F;
+// PHẦN HEADER
+body{
+    background-color: $color-black-3;
+}
+header {
+    .header{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 80px ;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background-color:$color-black-1;
+    }
+    .items{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+    a{  
+        color: $color-blue-2;
+        padding-top: 20px;
+        margin-right: 80px;
+        font-size: 30px;
+       text-decoration: none;
+     
+        i {
+          transition:color 0.3s ;;
+            &:hover{
+                color: $color-blue-2;
+                       }
+            font-size: 40px;
+     padding-left: 10px;
+     color:$color-og-1;
+        }
+        p {
+            color: $color-w-1;
+padding-bottom: 20px;
+        }
+    }    
+    }
+    .logo {
+        display: flex;
+           font-size: 80px;
+           h2 {
+               font-size: 60px;
+           color:$color-w-1;
+           }
+           i{
+               color:$color-og-1;
+           }
+       }
+   
+
+}
+//PHẦN QUẢN LÝ 
+main {
+ .container{
+    width: 100%;
+    margin-top: 90px ;
+   
+  .maneger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  background-color: $color-black-1;
+  padding: 10px 20px;
+  border-radius: 10px 10px 0px 0px;
+  a{
+    color: $color-w-1;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 10px;
+  }
+  p{
+    color: $color-w-1;
+    font-size: 50px;
+  }
+  button {
+    color: $color-w-1;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: $color-og-1;
+    transition: background-color 0.3s ;
+    &:hover{
+ background-color: $color-blue-2;
+    }
+  }
+  }
+  .info {
+height: 100%;
+width: 100%;
+    table{
+        border-collapse: collapse;
+       text-align: center;
+        height: 100%;   
+        width: 100%; 
+           th, td{
+            
+            border: 1px solid black;
+                padding: 20px;
+                text-align: center; 
+                padding: 10px 20px;
+                background-color: $color-w-1;
+               a{
+                text-decoration: none;
+                color: $color-w-1;
+               } 
+            }
+    }
+ 
+  }
+}
+}
+// CSS modal 
+
+
+.modaltable{
+    width: 1000px;
+    height: 650px;
+    position: fixed;
+    top:100px;
+    left:300px;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    background-color: $color-black-2;
+    border-radius: 10px 10px 10px 10px;
+    padding-left: 50px;
+    padding-top: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity linear 0.2s;
+&:target{
+    visibility: visible;
+    opacity: 1;
+}
+.dialog-close-btn{
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    text-decoration: none;
+    font-size: 40px;
+    color: $color-og-1;
+}
+}
+
+   .modaltitle{
+   
+        text-align: center;
+     color: $color-w-1;
+        border-radius: 5px 5px 0 0;
+    
+    }
+    .modalinput{
+      
+        .form-group {
+            margin-bottom: 10px;
+         width: 900px;
+        }
+        button {
+      margin-left: 400px;
+      a{
+        text-decoration: none;
+        color: $color-w-1;
+      }
+      
+        }
+        .update{
+          a{  color: $color-black-1;}
+        }
+    }
+  
+    // footer
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body{
+      line-height: 1.5;
+      font-family: 'Poppins', sans-serif;
+    }
+    *{
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+    }
+    .container{
+      max-width: 1170px;
+      margin:auto;
+      .row{
+        display: flex;
+        flex-wrap: wrap;
+        ul{
+          list-style: none;
+        }
+      }
+
+    }
+    
+    
+    .footer {
+      background-color: $color-black-1;
+      padding: 70px 0;
+    
+      .footer-col {
+        width: 25%;
+        padding: 0 15px;
+    
+        h4 {
+          font-size: 18px;
+          color: #ffffff;
+          text-transform: capitalize;
+          margin-bottom: 35px;
+          font-weight: 500;
+          position: relative;
+    
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            box-sizing: border-box;
+            width: 0;
+            transition: width 0.3s ease;
+          }
+    
+          &:hover::before {
+            width: 50px;
+          }
+        }
+      }
+    }
+    
+    
+   
+    .footer-col ul li:not(:last-child){
+      margin-bottom: 10px;
+    }
+    .footer-col  {
+      ul{
+      
+        li{
+          
+         a{
+          font-size: 16px;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+        transition: all 0.3s ease;
+      &:hover{
+        color: #ffffff;
+        padding-left: 8px;
+      }}}}}
+      
+    
+    
+    .footer-col  {
+      .social-links{ a { display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-color: rgba(255,255,255,0.2);
+        margin:0 10px 10px 0;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: all 0.5s ease;}}
+     
+    }
+    .footer-col  {
+      .social-links{a{
+        &:hover{  color: #24262b;
+          background-color: #ffffff;}
+      }}
+   
+    }
+    
+    /*responsive*/
+    @media(max-width: 767px){
+      .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    }
+    @media(max-width: 574px){
+      .footer-col{
+        width: 100%;
+    }
+    }
+
+
+
+// .node
