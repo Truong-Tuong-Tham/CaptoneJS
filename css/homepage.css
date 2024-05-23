@@ -32,12 +32,12 @@ body {
   height: 350px;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
-  overflow: hidden; /* Ensure the ::before pseudo-element is contained within the .items element */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .homepage a .items:hover {
-  transform: translateY(-10px); /* Slight lift on hover */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 .homepage a .items::before {
   content: "";
@@ -46,20 +46,20 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.1); /* Semi-transparent overlay */
+  background: rgba(0, 0, 0, 0.1);
   z-index: 1;
-  transition: opacity 0.3s ease; /* Smooth transition for opacity */
-  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease;
+  opacity: 0;
 }
 .homepage a .items:hover::before {
-  opacity: 1; /* Show overlay on hover */
+  opacity: 1;
 }
 .homepage a .items .title {
-  position: relative; /* Ensure the content is above the ::before pseudo-element */
+  position: relative;
   z-index: 2;
   width: 100%;
   height: auto;
-  padding: 10px; /* Optional padding for better layout */
+  padding: 10px;
 }
 .homepage a .items .title img {
   max-width: 100%;

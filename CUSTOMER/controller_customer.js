@@ -23,8 +23,10 @@ export const renderPhoneList=(arrphone) => {
     export const showDataItem = (item) => {
 let arritem="";
 let total=0;
+let donvi=0;
 item.forEach((items) => {
 let gia = items.soLuong*items.price;
+donvi+=items.soLuong;
 let content= `
 <tr>
 <td>${items.name}</td>
@@ -37,6 +39,7 @@ let content= `
 total+=gia;
 arritem+=content;
 })
+document.getElementById('donvi').innerHTML=donvi;
 document.getElementById('body').innerHTML=arritem;
 document.getElementById('total').innerHTML=total;
 }

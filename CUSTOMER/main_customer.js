@@ -1,7 +1,7 @@
 import { renderPhoneList, showDataItem } from "./controller_customer.js";
 import { getDetailApi, getListPhone } from "./services_customer.js";
 
-const fetchListPhone = ()=> {
+ export const fetchListPhoneC = ()=> {
     getListPhone()
     .then((res) => {
         console.log('res: ', res);
@@ -12,7 +12,7 @@ const fetchListPhone = ()=> {
         console.log('err: ', err);
       });
     }
-    fetchListPhone();
+    fetchListPhoneC();
      const arrCart=[];
    
     const themPhone = (id) => {

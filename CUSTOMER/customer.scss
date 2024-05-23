@@ -2,40 +2,119 @@ body {
     background-color: wheat;
 
     header {
-        .header {
-            display: flex;
-            justify-content: flex-end;
-
-            button {
-                position: relative;
-                border: none;
-                padding: 8px 16px;
-                background: transparent;
-                color: #333;
-                cursor: pointer;
-                margin-left: 10px;
-                font-size: 16px;
-
-                a {
-                    color: #333;
-
-                    i {
-                        font-size: 40px;
-                    }
-                }
-
-                span {
-                    position: absolute;
-                    top: 5px;
-                    right: 10px;
-                    width: 15px;
-                    height: 15px;
-                    background-color: white;
-                    border-radius: 50%;
-                    border: 1px solid #333;
-                }
+      .header {
+        display: flex;
+        justify-content: flex-end;
+        
+        .BACK {
+          display: flex;
+          justify-content: space-between;
+          
+          a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #333;
+            padding-top: 20px;
+            position: relative;
+      
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background-color: #333;
+              transform: scaleX(0);
+              transition: transform 0.3s ease-in-out;
+              transform-origin: bottom right;
             }
+      
+            &:hover {
+              color: #000;
+      
+              &::before {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+              }
+            }
+      
+            i {
+              font-size: 30px;
+            }
+      
+            p {
+              font-size: 10px;
+              text-align: center;
+            }
+          }
         }
+        
+        button {
+          position: relative;
+          border: none;
+          padding: 8px 16px;
+          background: transparent;
+          color: #333;
+          cursor: pointer;
+          margin-left: 10px;
+          font-size: 16px;
+          transition: background-color 0.3s, color 0.3s, transform 0.3s;
+      
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+            transform-origin: bottom right;
+          }
+      
+          &:hover {
+            background-color: transparent;
+            color: #000;
+      
+            &::before {
+              transform: scaleX(1);
+              transform-origin: bottom left;
+            }
+          }
+      
+          &:active {
+            transform: scale(0.98);
+          }
+      
+          a {
+            color: #333;
+      
+            i {
+              margin-top: 5px;
+              font-size: 50px;
+            }
+          }
+      
+          span {
+            text-align: center;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            width: 23px;
+            height: 23px;
+            background-color: white;
+            border-radius: 50%;
+            border: 1px solid #333;
+            padding-bottom: 20px;
+            font-weight: bold;
+      
+           
+          }
+        }
+      }
+      
     }
 }
 
