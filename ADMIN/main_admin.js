@@ -64,6 +64,7 @@ updateAPI(phone)
 .then((res) => {
   showMessage("Chỉnh sửa thành công")
   fetchListPhone()
+  resetForm()
   console.log("🎱 - .then - res:", res)
 })
 .catch((err)=>{

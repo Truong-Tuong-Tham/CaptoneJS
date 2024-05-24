@@ -1,4 +1,7 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 body {
+  font-family: "Poppins", sans-serif;
   background-color: wheat;
 }
 body header .header {
@@ -186,6 +189,7 @@ body header .header button span {
 }
 
 .side-nav {
+  max-height: 900px;
   position: fixed;
   background: #010101;
   height: 100%;
@@ -198,6 +202,20 @@ body header .header button span {
   visibility: hidden;
   opacity: 0;
   transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.side-nav:target {
+  right: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.close:target ~ .side-nav {
+  right: -100%;
+  visibility: hidden;
+  opacity: 1;
+}
+.side-nav h2 {
+  text-align: center;
+  color: #fff;
 }
 .side-nav .close {
   position: absolute;
@@ -213,18 +231,25 @@ body header .header button span {
   color: white;
 }
 .side-nav .cart-items {
-  position: absolute;
+  overflow-y: auto;
+  position: relative;
   width: 100%;
   margin: 0;
-  height: 50%;
-  top: 10%;
-  flex-direction: column;
+  height: calc(100% - 50px);
+  /* Tùy chỉnh kiểu dáng của thanh cuộn */
 }
-.side-nav .cart-items h2 {
-  text-align: center;
-  color: #fff;
+.side-nav .cart-items::-webkit-scrollbar {
+  width: 10px;
+}
+.side-nav .cart-items::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+.side-nav .cart-items::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
 }
 .side-nav .cart-items table {
+  max-height: 100%;
   width: 100%;
   border-collapse: collapse;
   background-color: #333;
@@ -246,22 +271,38 @@ body header .header button span {
 }
 .side-nav .cart-items table tbody tr td {
   padding: 10px;
-  text-align: left;
+  text-align: center;
   border: 1px solid #555;
   color: #fff;
 }
-.side-nav .cart-items table tbody tr td:last-child {
+.side-nav .cart-items table tbody tr td .counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.side-nav .cart-items table tbody tr td .counter .btn-decrement, .side-nav .cart-items table tbody tr td .counter .btn-increment {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0 10px;
+}
+.side-nav .cart-items table tbody tr td .counter .btn-decrement:hover, .side-nav .cart-items table tbody tr td .counter .btn-increment:hover {
+  background-color: #0056b3;
+}
+.side-nav .cart-items table tbody tr td .counter .value {
+  padding: 10px 20px;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 50px;
   text-align: center;
 }
-.side-nav:target {
-  right: 0;
-  visibility: visible;
-  opacity: 1;
-}
-.close:target ~ .side-nav {
-  right: -100%;
-  visibility: hidden;
-  opacity: 1;
+.side-nav .cart-items table tbody tr td:last-child {
+  text-align: center;
 }
 .side-nav .final {
   text-align: right;
@@ -271,4 +312,9 @@ body header .header button span {
 .side-nav .final p {
   color: #fff;
   margin: 0;
+}
+.side-nav .thanhtoan {
+  text-align: right;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }/*# sourceMappingURL=customer.css.map */

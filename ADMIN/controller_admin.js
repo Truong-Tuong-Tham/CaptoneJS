@@ -21,11 +21,11 @@ contentHTML+=contentTr;
 });
 document.querySelector('#table').innerHTML=contentHTML;
 }
-// Lấy dât từ modal
+// Lấy data từ modal
 export const getDataForm = () => {
 let id=document.getElementById('id').value;   
 let name=document.getElementById('tname').value;
-let price=document.getElementById('tprice').value;
+let price=document.getElementById('tprice').value*1;
 let screen=document.getElementById('tscreen').value;
 let backCamera=document.getElementById('tbackCamera').value;
 let frontCamera=document.getElementById('tfrontCamera').value;

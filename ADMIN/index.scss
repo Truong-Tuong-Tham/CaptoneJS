@@ -128,62 +128,121 @@ width: 100%;
 // CSS modal 
 
 
-.modaltable{
-    width: 1000px;
-    height: 650px;
-    position: fixed;
-    top:100px;
-    left:300px;
-    bottom: 0;
-    right: 0;
-    z-index: 10;
-    background-color: $color-black-2;
-    border-radius: 10px 10px 10px 10px;
-    padding-left: 50px;
-    padding-top: 20px;
+.modaltable {
+  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 600px;
+  z-index: 1050;
   visibility: hidden;
   opacity: 0;
-  transition: opacity linear 0.2s;
-&:target{
+  transition: visibility 0.3s, opacity 0.3s ease;
+
+  &:target {
     visibility: visible;
     opacity: 1;
-}
-.dialog-close-btn{
+  }
+
+  .close {
     position: absolute;
-    top: 0px;
-    right: 20px;
-    text-decoration: none;
-    font-size: 40px;
-    color: $color-og-1;
-}
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+
+    a {
+      color: black;
+      text-decoration: none;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+
+  .modaltitle {
+    text-align: center;
+    margin-bottom: 20px;
+
+    h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+  }
+
+  .modalinput {
+    .form-group {
+      margin-bottom: 15px;
+
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+
+        &:disabled {
+          background-color: #f5f5f5;
+        }
+      }
+
+      .form-select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    }
+
+    .but {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        flex: 1;
+        margin: 0 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+
+        &.btn-success {
+          background-color: #28a745;
+
+          &:hover {
+            background-color: #218838;
+          }
+        }
+
+        &.btn-warning {
+          background-color: #ffc107;
+
+          &:hover {
+            background-color: #e0a800;
+          }
+        }
+
+        a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
 }
 
-   .modaltitle{
-   
-        text-align: center;
-     color: $color-w-1;
-        border-radius: 5px 5px 0 0;
-    
-    }
-    .modalinput{
-      
-        .form-group {
-            margin-bottom: 10px;
-         width: 900px;
-        }
-        button {
-      margin-left: 400px;
-      a{
-        text-decoration: none;
-        color: $color-w-1;
-      }
-      
-        }
-        .update{
-          a{  color: $color-black-1;}
-        }
-    }
-  
     // footer
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
     body{

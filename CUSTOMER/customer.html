@@ -26,7 +26,7 @@
     <div class="search"><span type="button" onclick="findtype()"><i class="fa fa-search"></i></span> <select name="tìm kiếm" id="find">
         <option selected> Type Phone</option>
         <option value="IPhone">IPhone</option>
-        <option value="Samsung">Samsung</option>
+        <option value="SamSung">Samsung</option>
         <option value="ALL">ALL</option>
     </select></div>
    <div class="BACK"> <a href="../HOMEPAGE/index.html"><i class="fa fa-home"></i>
@@ -35,15 +35,16 @@
     <p>ADMIN</p></a></div>
    <div> <button>
     <a href="#shopping"><i class="fa fa-shopping-cart"></i></a>
-    <span id="donvi"></span>
+    <span id="donvi">0</span>
 </button></div>
 </div>
 <div  id="showPhone" class="phone"></div>
 <!-- CART -->
 <div id="shopping" class="side-nav">
     <button class="close"> <a class="dialog-close-btn" href="#" >&times;</a></button>
+    <h2>Cart</h2>
     <div class="cart-items">
-        <h2>Cart</h2>
+        
         <table>
             <thead>
                 <tr>
@@ -59,7 +60,10 @@
             </tbody>
         </table>
         <div class="final">
-            <p style="font-weight:bold;">Tổng Tiền <span id="total"></span><sup>đ</sup></p>
+            <p style="font-weight:bold;">Tổng Tiền <span id="total"></span></p>
+        </div>
+        <div class="thanhtoan">
+            <button class="btn btn-success">Thanh Toán</button>
         </div>
     </div>
     
@@ -68,7 +72,8 @@
        
 
         
-       
+          <!-- sweet alert 2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <!-- CDN AXIOS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js" integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         

@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 body {
+  font-family: 'Poppins', sans-serif;
     background-color: wheat;
 
     header {
@@ -194,7 +196,7 @@ $font-family: Arial, sans-serif;
         }
         .card-img-top {
             width: 100%;
-            height: auto;
+            height:auto;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
         }
@@ -228,76 +230,7 @@ $font-family: Arial, sans-serif;
 }
 // CART
 .side-nav {
-  .close {
-    position: absolute;
-    top: -10px;
-    right: 0px;
-    background: none;
-    border: none;
-    cursor: pointer;
-
-    .dialog-close-btn {
-      text-decoration: none;
-      font-size: 40px;
-      color: white;
-    }
-  }
-
-  .cart-items {
-    position: absolute;
-    width: 100%;
-    margin: 0;
-    height: 50%;
-    top: 10%;
-    flex-direction: column;
-    h2 {
-        text-align: center;
-        color: #fff;
-      
-      }
-    
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        background-color: #333;
-        thead {
-          tr {
-            background-color: #444;
-            color: #fff;
-    
-            td {
-              padding: 10px;
-              text-align: center;
-              border: 1px solid #555;
-            }
-          }
-        }
-    
-        tbody {
-          tr {
-            &:nth-child(even) {
-              background-color: #3d3d3d;
-            }
-    
-            &:nth-child(odd) {
-              background-color: #2b2b2b;
-            }
-    
-            td {
-              padding: 10px;
-              text-align: left;
-              border: 1px solid #555;
-              color: #fff;
-    
-              &:last-child {
-                text-align: center;
-              }
-            }
-          }
-        }
-      }
-  }
-
+  max-height: 900px;
   position: fixed;
   background: #010101;
   height: 100%;
@@ -322,14 +255,136 @@ $font-family: Arial, sans-serif;
     visibility: hidden;
     opacity: 1;
   }
-  .final {
-    text-align: right; // Canh phải
-    margin-top: 20px; // Khoảng cách trên cùng của tổng tiền
-    font-weight: bold;
-  
-    p {
+
+  h2 {
+    text-align: center;
     color: #fff;
-      margin: 0; // Bỏ khoảng cách mặc định của p
+  }
+
+  .close {
+    position: absolute;
+    top: -10px;
+    right: 0px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    .dialog-close-btn {
+      text-decoration: none;
+      font-size: 40px;
+      color: white;
     }
+  }
+
+  .cart-items {
+    overflow-y: auto;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    height: calc(100% - 50px); // Trừ đi chiều cao của phần tử "Thanh toán" và "Tổng tiền"
+
+    /* Tùy chỉnh kiểu dáng của thanh cuộn */
+    &::-webkit-scrollbar {
+      width: 10px; // Chiều rộng của thanh cuộn
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #888; // Màu nền của thanh cuộn
+      border-radius: 5px; // Độ cong của góc của thanh cuộn
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1; // Màu nền của track (phần nền của thanh cuộn)
+    }
+
+    table {
+      max-height: 100%; // Hiển thị bảng không vượt quá chiều cao của phần "Cart"
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #333;
+
+      thead {
+        tr {
+          background-color: #444;
+          color: #fff;
+
+          td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #555;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          &:nth-child(even) {
+            background-color: #3d3d3d;
+          }
+
+          &:nth-child(odd) {
+            background-color: #2b2b2b;
+          }
+
+          td {
+            .counter {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              .btn-decrement, .btn-increment {
+                background-color: #007bff;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 20px;
+                cursor: pointer;
+                border-radius: 4px;
+                margin: 0 10px;
+
+                &:hover {
+                  background-color: #0056b3;
+                }
+              }
+
+              .value {
+                padding: 10px 20px;
+                font-size: 20px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                min-width: 50px;
+                text-align: center;
+              }
+            }
+
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #555;
+            color: #fff;
+
+            &:last-child {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .final {
+    text-align: right;
+    margin-top: 20px;
+    font-weight: bold;
+
+    p {
+      color: #fff;
+      margin: 0;
+    }
+  }
+
+  .thanhtoan {
+    text-align: right;
+    margin-right: 20px; // Điều chỉnh margin cho "Thanh toán"
+    margin-bottom: 20px; // Điều chỉnh margin cho "Thanh toán"
   }
 }

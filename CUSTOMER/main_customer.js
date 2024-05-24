@@ -1,4 +1,4 @@
-import { renderPhoneList, showDataItem } from "./controller_customer.js";
+import { renderPhoneList, showDataItem, showMessage } from "./controller_customer.js";
 import { getDetailApi, getListPhone } from "./services_customer.js";
 
  export const fetchListPhoneC = ()=> {
@@ -12,9 +12,9 @@ import { getDetailApi, getListPhone } from "./services_customer.js";
         console.log('err: ', err);
       });
     }
+
     fetchListPhoneC();
      const arrCart=[];
-   
     const themPhone = (id) => {
         getDetailApi(id)
         .then ((res)=>{
@@ -24,6 +24,7 @@ import { getDetailApi, getListPhone } from "./services_customer.js";
           arrCart.push({...detailPhone,soLuong:1})
         }
         else{
+        
         phoneIndex.soLuong+=1;
         }
         console.log("🎱 - arrCart:", arrCart)
@@ -68,3 +69,38 @@ if (phoneIndex!== -1) {
         
         };
         window.findtype=findtype;
+        // tăng giảm số lượng 
+        let counterValue = 0;
+        function increment(id) {
+          getDetailApi(id)
+        .then ((res)=>{
+          let detailPhone =res.data;
+          let phoneIndex = arrCart.find((item)=>item.id == detailPhone.id);
+       if(phoneIndex.soLuong>=1) {
+        phoneIndex.soLuong+=1;
+       }
+        console.log("🎱 - arrCart:", arrCart)
+        showDataItem(arrCart);
+        
+        })
+        .catch((err)=>{ console.log("err",err)})
+        }
+        window.increment=increment;
+        function decrement(id) {
+          getDetailApi(id)
+          .then ((res)=>{
+            let detailPhone =res.data;
+            let phoneIndex = arrCart.find((item)=>item.id == detailPhone.id);
+         if(phoneIndex.soLuong<=1) {
+          showMessage("Số lượng nhỏ nhất rồi ")
+         }
+         else {
+          phoneIndex.soLuong-=1;
+         }
+          console.log("🎱 - arrCart:", arrCart)
+          showDataItem(arrCart);
+          
+          })
+          .catch((err)=>{ console.log("err",err)})
+        }
+        window.decrement=decrement;

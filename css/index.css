@@ -111,54 +111,98 @@ main .container .info table th a, main .container .info table td a {
 }
 
 .modaltable {
-  width: 1000px;
-  height: 650px;
   position: fixed;
-  top: 100px;
-  left: 300px;
-  bottom: 0;
-  right: 0;
-  z-index: 10;
-  background-color: #31363F;
-  border-radius: 10px 10px 10px 10px;
-  padding-left: 50px;
-  padding-top: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 600px;
+  z-index: 1050;
   visibility: hidden;
   opacity: 0;
-  transition: opacity linear 0.2s;
+  transition: visibility 0.3s, opacity 0.3s ease;
 }
 .modaltable:target {
   visibility: visible;
   opacity: 1;
 }
-.modaltable .dialog-close-btn {
+.modaltable .close {
   position: absolute;
-  top: 0px;
-  right: 20px;
-  text-decoration: none;
-  font-size: 40px;
-  color: #e91e63;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
 }
-
-.modaltitle {
+.modaltable .close a {
+  color: black;
+  text-decoration: none;
+}
+.modaltable .close a:hover {
+  color: red;
+}
+.modaltable .modaltitle {
   text-align: center;
-  color: #FFFAE6;
-  border-radius: 5px 5px 0 0;
+  margin-bottom: 20px;
 }
-
-.modalinput .form-group {
-  margin-bottom: 10px;
-  width: 900px;
+.modaltable .modaltitle h1 {
+  font-size: 24px;
+  margin: 0;
 }
-.modalinput button {
-  margin-left: 400px;
+.modaltable .modalinput .form-group {
+  margin-bottom: 15px;
 }
-.modalinput button a {
+.modaltable .modalinput .form-group .form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.modaltable .modalinput .form-group .form-control:disabled {
+  background-color: #f5f5f5;
+}
+.modaltable .modalinput .form-group .form-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.modaltable .modalinput .but {
+  display: flex;
+  justify-content: space-between;
+}
+.modaltable .modalinput .but button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+.modaltable .modalinput .but button.btn-success {
+  background-color: #28a745;
+}
+.modaltable .modalinput .but button.btn-success:hover {
+  background-color: #218838;
+}
+.modaltable .modalinput .but button.btn-warning {
+  background-color: #ffc107;
+}
+.modaltable .modalinput .but button.btn-warning:hover {
+  background-color: #e0a800;
+}
+.modaltable .modalinput .but button a {
+  color: white;
   text-decoration: none;
-  color: #FFFAE6;
-}
-.modalinput .update a {
-  color: #24262b;
 }
 
 body {
