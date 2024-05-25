@@ -21,6 +21,7 @@
     </head>
 
     <body>
+           
         <header>
 <div class="header">
     <div class="search"><span type="button" onclick="findtype()"><i class="fa fa-search"></i></span> <select name="tìm kiếm" id="find">
@@ -29,7 +30,7 @@
         <option value="SamSung">Samsung</option>
         <option value="ALL">ALL</option>
     </select></div>
-   <div class="BACK"> <a href="../HOMEPAGE/index.html"><i class="fa fa-home"></i>
+   <div class="BACK"> <a href="../index.html"><i class="fa fa-home"></i>
     <p>HOME</p></a>
     <a href="../ADMIN/admin.html"><i class="fa fa-user-edit"></i></i>
     <p>ADMIN</p></a></div>
@@ -63,7 +64,7 @@
             <p style="font-weight:bold;">Tổng Tiền <span id="total"></span></p>
         </div>
         <div class="thanhtoan">
-            <button class="btn btn-success">Thanh Toán</button>
+            <button onclick="thanhtoan()" class="btn btn-success">Thanh Toán</button>
         </div>
     </div>
     

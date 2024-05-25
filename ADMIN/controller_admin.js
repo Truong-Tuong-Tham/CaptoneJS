@@ -54,6 +54,13 @@ export const showMessage = (message) => {
       icon: 'success',
     });
   };
+  export const ShowMessage = (message) => {
+    Swal.fire({
+      icon: "error",
+      title: "Not FOUND",
+      text: message,
+    });
+  };
   export const resetForm = ()=> {
     let id=document.getElementById('id').value="";   
     let name=document.getElementById('tname').value="";

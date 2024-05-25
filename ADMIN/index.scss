@@ -79,6 +79,21 @@ main {
   background-color: $color-black-1;
   padding: 10px 20px;
   border-radius: 10px 10px 0px 0px;
+
+i {
+  width: 50px;
+  height: 20px;
+}
+ span {
+  width:100%;
+  select{
+  height:50px;
+ }
+ input{
+  height:30px;
+  width:90%;
+}
+ }
   a{
     color: $color-w-1;
     text-decoration: none;
@@ -87,9 +102,10 @@ main {
   }
   p{
     color: $color-w-1;
-    font-size: 50px;
+    font-size: 40px;
   }
   button {
+    
     color: $color-w-1;
     border-radius: 5px;
     font-size: 20px;
@@ -98,6 +114,7 @@ main {
     &:hover{
  background-color: $color-blue-2;
     }
+    
   }
   }
   .info {

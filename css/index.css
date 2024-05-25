@@ -68,6 +68,20 @@ main .container .maneger {
   padding: 10px 20px;
   border-radius: 10px 10px 0px 0px;
 }
+main .container .maneger i {
+  width: 50px;
+  height: 20px;
+}
+main .container .maneger span {
+  width: 100%;
+}
+main .container .maneger span select {
+  height: 50px;
+}
+main .container .maneger span input {
+  height: 30px;
+  width: 90%;
+}
 main .container .maneger a {
   color: #FFFAE6;
   text-decoration: none;
@@ -76,7 +90,7 @@ main .container .maneger a {
 }
 main .container .maneger p {
   color: #FFFAE6;
-  font-size: 50px;
+  font-size: 40px;
 }
 main .container .maneger button {
   color: #FFFAE6;

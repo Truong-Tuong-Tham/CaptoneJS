@@ -1,4 +1,4 @@
-import { getDataForm, renderPhoneList, resetForm, showDataItem, showMessage } from "./controller_admin.js";
+import { ShowMessage, getDataForm, renderPhoneList, resetForm, showDataItem, showMessage } from "./controller_admin.js";
 import { createPhoneAPI, deletePhoneApi, getDetailApi, getListPhone, updateAPI } from "./services_admin.js";
 const fetchListPhone = ()=> {
 getListPhone()
@@ -73,3 +73,46 @@ updateAPI(phone)
 }
 window.updatePhone=updatePhone;
 
+const findName = ()=> {
+
+getListPhone()
+.then((res) => {
+    console.log('res: ', res);
+    let listPhone = res.data;
+    let name=document.getElementById('timten').value;
+const arrPHone=listPhone.filter((item)=>item.name == name)
+if(arrPHone=='') {
+  renderPhoneList(listPhone)
+ShowMessage('Không tìm thấy Phone')
+}
+else {let phoneType = listPhone.filter((item)=>item.name==name);
+  renderPhoneList(phoneType);}
+})
+  .catch((err) => {
+    console.log('err: ', err);
+  });
+}
+window.findName=findName;
+const findPrice =() => {
+  getListPhone()
+  .then((res) => {
+      console.log('res: ', res);
+      let listPhone = res.data;
+let selec=document.getElementById('typePrice').value;
+if(selec=="up") {
+let arr= listPhone.slice().sort((a, b) => a.price - b.price);
+renderPhoneList(arr)
+}
+else if(selec=="down"){
+ let arr= listPhone.slice().sort((a, b) => b.price - a.price);
+ renderPhoneList(arr)
+}
+else{
+renderPhoneList(listPhone) 
+}
+    })
+    .catch((err) => {
+      console.log('err: ', err);
+    });
+}
+window.findPrice=findPrice;

@@ -53,6 +53,7 @@ document.getElementById('donvi').innerHTML=donvi;
 document.getElementById('body').innerHTML=arritem;
 document.getElementById('total').innerHTML=tongtien;
 }
+// Hàm SweetAlert
 export const showMessage = (message) => {
   Swal.fire({
     title: message,
@@ -60,3 +61,22 @@ export const showMessage = (message) => {
     icon: "error",
   });
 };
+export const ShowMessage = (message) => {
+  Swal.fire({
+    title: message,
+    text: '',
+    icon: 'success',
+  });
+};
+// Hàm lưu một mảng vào Local Storage
+ export const saveArrayToLocalStorage = (key, array) => {
+  const jsonString = JSON.stringify(array);
+  localStorage.setItem(key, jsonString);
+};
+
+// Hàm lấy một mảng từ Local Storage
+export const getArrayFromLocalStorage = (key) => {
+  const jsonString = localStorage.getItem(key);
+  return jsonString ? JSON.parse(jsonString) : [];
+};
+
