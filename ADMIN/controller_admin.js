@@ -88,3 +88,8 @@ export const showDataItem = (item) => {
  document.getElementById('tdesc').value=desc;
  document.getElementById('tstype').value=type=="IPhone" ? I:"SamSung";
 }
+// ShowButton
+export const ShowButton = (type)=> {
+  document.getElementById('them').style.display = type == 'create'?'inline':'none';
+  document.getElementById('capnhat').style.display = type == 'update'?'inline':'none';
+}

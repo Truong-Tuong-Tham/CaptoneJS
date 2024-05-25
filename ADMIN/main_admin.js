@@ -1,4 +1,4 @@
-import { ShowMessage, getDataForm, renderPhoneList, resetForm, showDataItem, showMessage } from "./controller_admin.js";
+import { ShowButton, ShowMessage, getDataForm, renderPhoneList, resetForm, showDataItem, showMessage } from "./controller_admin.js";
 import { createPhoneAPI, deletePhoneApi, getDetailApi, getListPhone, updateAPI } from "./services_admin.js";
 const fetchListPhone = ()=> {
 getListPhone()
@@ -12,6 +12,7 @@ getListPhone()
   });
 }
 fetchListPhone();
+ShowButton('create');
 
 const createPhone = () => {
 let dataPhone=getDataForm();
@@ -43,7 +44,7 @@ deletePhoneApi(id)
 window.deletePhone=deletePhone;
 
 const getDetail = (id) => {
-
+ShowButton('update')
   getDetailApi(id)
   .then ((res)=>{
     let detailPhone=res.data;
@@ -116,3 +117,8 @@ renderPhoneList(listPhone)
     });
 }
 window.findPrice=findPrice;
+const themSanPham=()=> {
+  resetForm();
+  ShowButton('create');
+}
+window.themSanPham=themSanPham;
